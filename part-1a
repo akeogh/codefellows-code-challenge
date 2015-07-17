@@ -1,118 +1,118 @@
 <html>
-	<head>
+  <head>
 
-	<style>
-		div {
-			border: 1px solid black;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 50px;
-			text-align: center;
-			width:50%
-		}
+  <style>
+    div {
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 50px;
+      text-align: center;
+      width:50%
+    }
 
-		li {
-			background-color: lightblue;
-			border: 1px solid blue;
-			text-align: left;
-			list-style-type: none;
-			margin-bottom: 10px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-
-		#awesome-index {
-			color: red;
-			font-size: 2em;
-			font-weight: bold;
-		}
-
-	</style>
-
-	</head>
-
-	<body>
-		<div>
-			<h1>How Awesome Are Programmers?</h1>
-			<p>In any random selection of people, programmers are always the best. For instance:</p>
-
-			<ul id="person-list">
-			</ul>
-		
-			<div>
-				<h2>PROGRAMMER AWESOMENESS INDEX:</h2>
-				<span id="awesome-index"></span>
-				<p>so awesome.</p>
-			</div>
-		</div>
-
-		<script>
+    li {
+      background-color: lightblue;
+      border: 1px solid blue;
+      text-align: left;
+      list-style-type: none;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
 
+    #awesome-index {
+      color: red;
+      font-size: 2em;
+      font-weight: bold;
+    }
 
+  </style>
 
-			var personList = [ 
-			{ 
-			name: 'Trinity', 
-			occupation: 'programmer', 
-			awesomeIndex: 10 
-			}, 
-			{ 
-			name: 'Mater', 
-			occupation: 'tow truck' 
-			}, 
-			{ 
-			name: 'Number 5', 
-			occupation: 'programmer', 
-			awesomeIndex: 7 
-			}, 
-			{ 
-			name: 'Alice', 
-			occupation: 'programmer', 
-			awesomeIndex: 9 
-			}, 
-			{ 
-			name: 'Zaphod', 
-			occupation: 'President of the Galaxy',
-			}, 
-			{ 
-			name: 'Bob Parr', 
-			occupation: 'programmer', 
-			awesomeIndex: 6 
-			}
-			]
+  </head>
+
+  <body>
+    <div>
+      <h1>How Awesome Are Programmers?</h1>
+      <p>In any random selection of people, programmers are always the best. For instance:</p>
+
+      <ul id="person-list">
+      </ul>
+    
+      <div>
+        <h2>PROGRAMMER AWESOMENESS INDEX:</h2>
+        <span id="awesome-index"></span>
+        <p>so awesome.</p>
+      </div>
+    </div>
+
+    <script>
 
 
 
-			
-			
-			var displayList = document.getElementById("person-list");
-			var displayAwesome = document.getElementById("awesome-index");
-			var awesomeTotal = 0;
-			var awesomeProgrammers = 0;
 
-			for (var i = 0; i < personList.length; i++) {
-				var thisPerson = personList[i];
-				displayList.insertAdjacentHTML("beforeend","<li id='" + i + "'>Name : " + 
-					thisPerson.name +
-					"<br/>Occupation : " + thisPerson.occupation +
-					"</li>");
-				if (thisPerson.awesomeIndex != undefined) {
-					if (thisPerson.occupation === "programmer") {
-						awesomeProgrammers++;
-						awesomeTotal += thisPerson.awesomeIndex;
-					}
-					document.getElementById(i).innerHTML += "<br/>Awesome Index : " + thisPerson.awesomeIndex;
-				}
-			}		
-			displayAwesome.innerHTML = awesomeTotal / awesomeProgrammers;
+      var personList = [ 
+      { 
+      name: 'Trinity', 
+      occupation: 'programmer', 
+      awesomeIndex: 10 
+      }, 
+      { 
+      name: 'Mater', 
+      occupation: 'tow truck' 
+      }, 
+      { 
+      name: 'Number 5', 
+      occupation: 'programmer', 
+      awesomeIndex: 7 
+      }, 
+      { 
+      name: 'Alice', 
+      occupation: 'programmer', 
+      awesomeIndex: 9 
+      }, 
+      { 
+      name: 'Zaphod', 
+      occupation: 'President of the Galaxy',
+      }, 
+      { 
+      name: 'Bob Parr', 
+      occupation: 'programmer', 
+      awesomeIndex: 6 
+      }
+      ]
 
 
 
-					
-		</script>
-				
+      
+      
+      var displayList = document.getElementById("person-list");
+      var displayAwesome = document.getElementById("awesome-index");
+      var awesomeTotal = 0;
+      var awesomeProgrammers = 0;
 
-	</body>
+      for (var i = 0; i < personList.length; i++) {
+        var thisPerson = personList[i];
+        displayList.insertAdjacentHTML("beforeend","<li id='" + i + "'>Name : " + 
+          thisPerson.name +
+          "<br/>Occupation : " + thisPerson.occupation +
+          "</li>");
+        if (thisPerson.awesomeIndex != undefined) {
+          if (thisPerson.occupation === "programmer") {
+            awesomeProgrammers++;
+            awesomeTotal += thisPerson.awesomeIndex;
+          }
+          document.getElementById(i).innerHTML += "<br/>Awesome Index : " + thisPerson.awesomeIndex;
+        }
+      }   
+      displayAwesome.innerHTML = awesomeTotal / awesomeProgrammers;
+
+
+
+          
+    </script>
+        
+
+  </body>
 </html>
