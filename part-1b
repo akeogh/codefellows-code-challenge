@@ -1,115 +1,115 @@
 <html>
-	<head>
+  <head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>
-	
-	<style>
-		div {
-			border: 1px solid black;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 50px;
-			text-align: center;
-			width:50%
-		}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>
+  
+  <style>
+    div {
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 50px;
+      text-align: center;
+      width:50%
+    }
 
-		li {
-			background-color: lightblue;
-			border: 1px solid blue;
-			text-align: left;
-			list-style-type: none;
-			margin-bottom: 10px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-
-		#awesome-index {
-			color: red;
-			font-size: 2em;
-			font-weight: bold;
-		}
-
-	</style>
-
-	</head>
-
-	<body>
-		<div>
-			<h1>How Awesome Are Programmers?</h1>
-			<p>In any random selection of people, programmers are always the best. For instance:</p>
-
-			<ul id="person-list">
-			</ul>
-		
-			<div>
-				<h2>PROGRAMMER AWESOMENESS INDEX:</h2>
-				<span id="awesome-index"></span>
-				<p>so awesome.</p>
-			</div>
-		</div>
-
-		<script>
+    li {
+      background-color: lightblue;
+      border: 1px solid blue;
+      text-align: left;
+      list-style-type: none;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
 
+    #awesome-index {
+      color: red;
+      font-size: 2em;
+      font-weight: bold;
+    }
 
-			var personList = [ 
-			{ 
-			name: 'Trinity', 
-			occupation: 'programmer', 
-			awesomeIndex: 10 
-			}, 
-			{ 
-			name: 'Mater', 
-			occupation: 'tow truck' 
-			}, 
-			{ 
-			name: 'Number 5', 
-			occupation: 'programmer', 
-			awesomeIndex: 7 
-			}, 
-			{ 
-			name: 'Alice', 
-			occupation: 'programmer', 
-			awesomeIndex: 9 
-			}, 
-			{ 
-			name: 'Zaphod', 
-			occupation: 'President of the Galaxy',
-			}, 
-			{ 
-			name: 'Bob Parr', 
-			occupation: 'programmer', 
-			awesomeIndex: 6 
-			}
-			]
+  </style>
+
+  </head>
+
+  <body>
+    <div>
+      <h1>How Awesome Are Programmers?</h1>
+      <p>In any random selection of people, programmers are always the best. For instance:</p>
+
+      <ul id="person-list">
+      </ul>
+    
+      <div>
+        <h2>PROGRAMMER AWESOMENESS INDEX:</h2>
+        <span id="awesome-index"></span>
+        <p>so awesome.</p>
+      </div>
+    </div>
+
+    <script>
 
 
 
-			//list all people in the provided list
-			$('#person-list').html(function() {
-				var listHtml = "";
-				for (var i = 0; i < personList.length; i++) {
-					var thisPerson = personList[i];
-					listHtml += "<li id = '" + i + "'>Name : " + thisPerson.name + 
-						"<br/>Occupation : " + thisPerson.occupation;
-						if (thisPerson.awesomeIndex != undefined) {
-							listHtml += "<br/>Awesome Index : " +thisPerson.awesomeIndex;
-						}
-					listHtml += "</li>";	
-				}
-				return listHtml;
-			});
+      var personList = [ 
+      { 
+      name: 'Trinity', 
+      occupation: 'programmer', 
+      awesomeIndex: 10 
+      }, 
+      { 
+      name: 'Mater', 
+      occupation: 'tow truck' 
+      }, 
+      { 
+      name: 'Number 5', 
+      occupation: 'programmer', 
+      awesomeIndex: 7 
+      }, 
+      { 
+      name: 'Alice', 
+      occupation: 'programmer', 
+      awesomeIndex: 9 
+      }, 
+      { 
+      name: 'Zaphod', 
+      occupation: 'President of the Galaxy',
+      }, 
+      { 
+      name: 'Bob Parr', 
+      occupation: 'programmer', 
+      awesomeIndex: 6 
+      }
+      ]
 
-			//Calculate and display average awesome index of programmers
-			var awesomeProgrammers = _.pluck(_.filter(personList, {'occupation':"programmer"}), 'awesomeIndex');
-			$('#awesome-index').html(_.sum(awesomeProgrammers) / awesomeProgrammers.length);
-			
 
-		
-		</script>
-				
 
-	</body>
+      //list all people in the provided list
+      $('#person-list').html(function() {
+        var listHtml = "";
+        for (var i = 0; i < personList.length; i++) {
+          var thisPerson = personList[i];
+          listHtml += "<li id = '" + i + "'>Name : " + thisPerson.name + 
+            "<br/>Occupation : " + thisPerson.occupation;
+            if (thisPerson.awesomeIndex != undefined) {
+              listHtml += "<br/>Awesome Index : " +thisPerson.awesomeIndex;
+            }
+          listHtml += "</li>";  
+        }
+        return listHtml;
+      });
+
+      //Calculate and display average awesome index of programmers
+      var awesomeProgrammers = _.pluck(_.filter(personList, {'occupation':"programmer"}), 'awesomeIndex');
+      $('#awesome-index').html(_.sum(awesomeProgrammers) / awesomeProgrammers.length);
+      
+
+    
+    </script>
+        
+
+  </body>
 </html>
