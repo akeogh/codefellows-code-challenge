@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Welcome to the Library!</title>
+
+    <script language="javascript" type="text/javascript" src="jquery-1.8.3.js"></script>
+  </head>
+  <body>
+
+    <h1>Welcome to the Library Version 2!</h1>
+
+    <p>Let's take a look at the <span class="code">Book, Shelf,</span> and <span class='code'>Library</span> modules. We'll display some information here, but behind the scenes, lots of other stuff will be going on.</p>
+
+    <p>First, let's look at the <span class='code'>"Book"</span> object. We'll create some books, then use their <span class='code'>toString()</span> method to present the details:</p>
+
+    <div id = "bookSection" class = 'code'></div>
+    <figcaption>Sweet!</figcaption>
+
+    <p>Now we'll add the books to a <span class='code'>Shelf</span>. We'll use the shelf's <span class='code'>toString()</span> method to show its contents.</p>
+
+    <div id = "addToShelf" class = 'code'></div>
+    <figcaption>...Well that's basically just the same</figcaption>
+
+    <p>Okay. Maybe not that exciting. But what about removing a book? We can use the <span class = 'code'>removeBook()</span> function to do just that!</p>
+
+    <div id = 'removeFromShelf' class = 'code'></div>
+    <figcaption>WHAT WHERE DID THOSE BOOKS GO?</figcaption>
+
+    <p>Now we're getting somewhere! The shelf's <span class='code'>toString()</span> function removes books by title, so it's easy to use. But just one shelf isn't that exciting. I'd much prefer...</p>
+
+    <div id = 'library' class='code'></div>
+    <figcaption>A LIBRARY!</figcaption>
+
+    <p>Alright, a lot went on behind the scenes there. Now we have a library, with a few shelves, a few books on those shelves... But wait! A new shipment just came in! Let's add them to our inventory and get 'em on the shelves. You can create a new book with the Library object and put it directly on a shelf - let's add "The Maltese Falcon" to shelf 1:</p>
+
+    <div id = 'newBooks' class = 'code'></div>
+    <figcaption>Such a great story!</figcaption>
+
+    <p>Oh no! Shelf 3 had a moldy book! We'll have to get rid of the entire shelf!</p>
+
+    <div id = 'removeShelf' class = 'code'></div>
+    <figcaption>RIP, Shelf.</figcaption>
+
+    <p>A library isn't just about books on shelves. You gotta be able to check them out:</p>
+
+    <div id = 'checkOut' class = 'code'></div>
+    <figcaption>Wow. We're for real now.</figcaption>
+
+    <p>And of course, check them back in!</p>
+
+    <div id = 'checkIn' class = 'code'></div>
+    <figcaption>Love to have all my books in a row!</figcaption>
+
+    <p>So there you are kids. That's what a library was like, back in the days before your newfangled Kindles and e-Book readers.</p>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
