@@ -1,6 +1,4 @@
-var Book = require(book);
-
-var Shelf = function() {
+function Shelf() {
   this.shelf = [];
 
   this.addBook = function(newBook) {
@@ -32,6 +30,5 @@ var Shelf = function() {
     }
     return text;
   };
-};
+}
 
-module.export Shelf;
