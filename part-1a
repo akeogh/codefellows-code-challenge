@@ -35,11 +35,12 @@
   <body>
     <div>
       <h1>How Awesome Are Programmers?</h1>
-      <p>In any random selection of people, programmers are always the best. For instance:</p>
+      <p>In any random selection of people, programmers are always the best. For
+       instance:</p>
 
       <ul id="person-list">
       </ul>
-    
+
       <div>
         <h2>PROGRAMMER AWESOMENESS INDEX:</h2>
         <span id="awesome-index"></span>
@@ -49,44 +50,37 @@
 
     <script>
 
-
-
-
-      var personList = [ 
-      { 
-      name: 'Trinity', 
-      occupation: 'programmer', 
-      awesomeIndex: 10 
-      }, 
-      { 
-      name: 'Mater', 
-      occupation: 'tow truck' 
-      }, 
-      { 
-      name: 'Number 5', 
-      occupation: 'programmer', 
-      awesomeIndex: 7 
-      }, 
-      { 
-      name: 'Alice', 
-      occupation: 'programmer', 
-      awesomeIndex: 9 
-      }, 
-      { 
-      name: 'Zaphod', 
+      var personList = [
+      {
+      name: 'Trinity',
+      occupation: 'programmer',
+      awesomeIndex: 10
+      },
+      {
+      name: 'Mater',
+      occupation: 'tow truck'
+      },
+      {
+      name: 'Number 5',
+      occupation: 'programmer',
+      awesomeIndex: 7
+      },
+      {
+      name: 'Alice',
+      occupation: 'programmer',
+      awesomeIndex: 9
+      },
+      {
+      name: 'Zaphod',
       occupation: 'President of the Galaxy',
-      }, 
-      { 
-      name: 'Bob Parr', 
-      occupation: 'programmer', 
-      awesomeIndex: 6 
+      },
+      {
+      name: 'Bob Parr',
+      occupation: 'programmer',
+      awesomeIndex: 6
       }
       ]
 
-
-
-      
-      
       var displayList = document.getElementById("person-list");
       var displayAwesome = document.getElementById("awesome-index");
       var awesomeTotal = 0;
@@ -94,10 +88,13 @@
 
       for (var i = 0; i < personList.length; i++) {
         var thisPerson = personList[i];
-        displayList.insertAdjacentHTML("beforeend","<li id='" + i + "'>Name : " + 
+        // Display person's details on webpage
+        displayList.insertAdjacentHTML("beforeend","<li id='" + i + "'>Name : " +
           thisPerson.name +
           "<br/>Occupation : " + thisPerson.occupation +
           "</li>");
+        // Calculate total programmers & their combined awesome index
+        // (display awesome index on webpage only for programmers)
         if (thisPerson.awesomeIndex != undefined) {
           if (thisPerson.occupation === "programmer") {
             awesomeProgrammers++;
@@ -105,14 +102,9 @@
           }
           document.getElementById(i).innerHTML += "<br/>Awesome Index : " + thisPerson.awesomeIndex;
         }
-      }   
+      }
       displayAwesome.innerHTML = awesomeTotal / awesomeProgrammers;
 
-
-
-          
     </script>
-        
-
   </body>
 </html>

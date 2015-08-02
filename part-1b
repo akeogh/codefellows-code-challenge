@@ -3,7 +3,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>
-  
+
   <style>
     div {
       border: 1px solid black;
@@ -42,7 +42,7 @@
 
       <ul id="person-list">
       </ul>
-    
+
       <div>
         <h2>PROGRAMMER AWESOMENESS INDEX:</h2>
         <span id="awesome-index"></span>
@@ -52,52 +52,48 @@
 
     <script>
 
-
-
-      var personList = [ 
-      { 
-      name: 'Trinity', 
-      occupation: 'programmer', 
-      awesomeIndex: 10 
-      }, 
-      { 
-      name: 'Mater', 
-      occupation: 'tow truck' 
-      }, 
-      { 
-      name: 'Number 5', 
-      occupation: 'programmer', 
-      awesomeIndex: 7 
-      }, 
-      { 
-      name: 'Alice', 
-      occupation: 'programmer', 
-      awesomeIndex: 9 
-      }, 
-      { 
-      name: 'Zaphod', 
+      var personList = [
+      {
+      name: 'Trinity',
+      occupation: 'programmer',
+      awesomeIndex: 10
+      },
+      {
+      name: 'Mater',
+      occupation: 'tow truck'
+      },
+      {
+      name: 'Number 5',
+      occupation: 'programmer',
+      awesomeIndex: 7
+      },
+      {
+      name: 'Alice',
+      occupation: 'programmer',
+      awesomeIndex: 9
+      },
+      {
+      name: 'Zaphod',
       occupation: 'President of the Galaxy',
-      }, 
-      { 
-      name: 'Bob Parr', 
-      occupation: 'programmer', 
-      awesomeIndex: 6 
+      },
+      {
+      name: 'Bob Parr',
+      occupation: 'programmer',
+      awesomeIndex: 6
       }
       ]
 
-
-
-      //list all people in the provided list
+      //list all people in the provided list on webpage
       $('#person-list').html(function() {
         var listHtml = "";
         for (var i = 0; i < personList.length; i++) {
           var thisPerson = personList[i];
-          listHtml += "<li id = '" + i + "'>Name : " + thisPerson.name + 
+          listHtml += "<li id = '" + i + "'>Name : " + thisPerson.name +
             "<br/>Occupation : " + thisPerson.occupation;
             if (thisPerson.awesomeIndex != undefined) {
               listHtml += "<br/>Awesome Index : " +thisPerson.awesomeIndex;
             }
-          listHtml += "</li>";  
+          listHtml += "</li>";
         }
         return listHtml;
       });
@@ -105,11 +101,11 @@
       //Calculate and display average awesome index of programmers
       var awesomeProgrammers = _.pluck(_.filter(personList, {'occupation':"programmer"}), 'awesomeIndex');
       $('#awesome-index').html(_.sum(awesomeProgrammers) / awesomeProgrammers.length);
-      
 
-    
+
+
     </script>
-        
+
 
   </body>
 </html>
