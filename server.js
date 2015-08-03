@@ -8,7 +8,7 @@ http.createServer(function(request, response) {
     response.end(body);
   };
 
-  var html = fs.readFile('index2.html', 'utf8', function(error, data) {
+  var html = fs.readFile('index.html', 'utf8', function(error, data) {
     if (error) {
       respond(500, 'Something went wrong! ' + error.toString());
     } else {
